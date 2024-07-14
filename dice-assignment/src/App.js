@@ -74,7 +74,7 @@ const App = () => {
       ) : (
         <Grid container spacing={2}>
           {repos.map(repo => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={repo.id}>
+            <Grid item xs={12} sm={6} md={4} lg={4} key={repo.id}>
               <RepoCard repo={repo} />
             </Grid>
 

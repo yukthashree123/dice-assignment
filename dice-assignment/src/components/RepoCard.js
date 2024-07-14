@@ -1,23 +1,25 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, CardActions, Button, Box } from '@mui/material';
+import { Card, CardContent, Typography, Grid, Box, Avatar } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 
 const RepoCard = ({ repo }) => (
-  <Card sx={{ maxWidth: 345, margin: 2 }}>
-    <CardMedia
-      component="img"
-      alt="repository owner avatar"
-      height="140"
-      image={repo.owner.avatar_url}
-    />
+  <><Card sx={{ maxWidth: 345, margin: 2 }}>
+    <Grid container m={2} direction={"row"}>
+      <Grid>
+        <Avatar alt="repository owner avatar" src={repo.owner.avatar_url} />
+      </Grid>
+      <Grid marginLeft={2}>
+        <Typography gutterBottom variant="h5" component="div">
+          {repo.name}
+        </Typography>
+      </Grid>
+    </Grid>
     <Box sx={{
       height: '400px', overflow: 'auto'
     }}>
 
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {repo.name}
-        </Typography>
+
         <Typography variant="body2" color="text.secondary">
           {repo.description}
         </Typography>
@@ -29,7 +31,8 @@ const RepoCard = ({ repo }) => (
         </Typography>
       </CardContent>
     </Box>
-  </Card>
+  </Card >
+  </>
 );
 
 export default RepoCard;
